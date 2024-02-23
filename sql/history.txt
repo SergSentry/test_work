@@ -1,0 +1,113 @@
+tester@debian:~$ mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 11
+Server version: 8.0.36 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> source /home/tester/projects/java/test_work/sql/human_friends_init.sql
+Query OK, 1 row affected (0,01 sec)
+
+Database changed
+Query OK, 0 rows affected (0,04 sec)
+
+Query OK, 0 rows affected (0,03 sec)
+
+Query OK, 0 rows affected (0,03 sec)
+
+Query OK, 0 rows affected (0,03 sec)
+
+Query OK, 0 rows affected (0,03 sec)
+
+Query OK, 0 rows affected (0,03 sec)
+
+mysql> source /home/tester/projects/java/test_work/sql/human_friends_data.sql
+Query OK, 2 rows affected (0,02 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+Query OK, 2 rows affected (0,00 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+Query OK, 2 rows affected (0,01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+Query OK, 2 rows affected (0,01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+Query OK, 2 rows affected (0,00 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+Query OK, 2 rows affected (0,01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> source /home/tester/projects/java/test_work/sql/task10.sql
+Query OK, 2 rows affected (0,02 sec)
+
++----+-------------+--------+--------+------------+------------------------+
+| id | type        | view   | name   | birthdate  | commands               |
++----+-------------+--------+--------+------------+------------------------+
+|  1 | PACK_ANIMAL | DUNKEY | Eeyore | 2017-09-18 | Walk, Carry Load, Bray |
+|  2 | PACK_ANIMAL | DUNKEY | Burro  | 2019-01-23 | Walk, Bray, Kick       |
+|  1 | PACK_ANIMAL | HOURSE | Storm  | 2014-05-05 | Trot, Canter           |
+|  2 | PACK_ANIMAL | HOURSE | Blaze  | 2016-02-29 | Trot, Jump, Gallop     |
++----+-------------+--------+--------+------------+------------------------+
+4 rows in set (0,01 sec)
+
+mysql> 
+mysql> source /home/tester/projects/java/test_work/sql/task12.sql
+Query OK, 10 rows affected (0,03 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0,06 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 10 rows affected (0,05 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
++----+----------+---------+------------+------------------------+
+| id | name     | view    | birthdate  | commands               |
++----+----------+---------+------------+------------------------+
+|  1 | Whiskers | CAT     | 2019-05-15 | Sit, Pounce            |
+|  2 | Oliver   | CAT     | 2020-06-30 | Meow, Scratch, Jump    |
+|  3 | Buddy    | DOG     | 2018-12-10 | Sit, Paw, Bark         |
+|  4 | Bella    | DOG     | 2019-11-11 | Sit, Stay, Roll        |
+|  5 | Hammy    | HAMSTER | 2021-03-10 | Roll, Hide             |
+|  6 | Peanut   | HAMSTER | 2021-08-01 | Roll, Spin             |
+|  7 | Storm    | HOURSE  | 2014-05-05 | Trot, Canter           |
+|  8 | Blaze    | HOURSE  | 2016-02-29 | Trot, Jump, Gallop     |
+|  9 | Eeyore   | DUNKEY  | 2017-09-18 | Walk, Carry Load, Bray |
+| 10 | Burro    | DUNKEY  | 2019-01-23 | Walk, Bray, Kick       |
++----+----------+---------+------------+------------------------+
+10 rows in set (0,00 sec)
+
+mysql> source /home/tester/projects/java/test_work/sql/task11.sql
+Query OK, 3 rows affected (0,09 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0,02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0,06 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 3 rows affected (0,05 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
++----+--------+---------+------------+---------------------+------+--------+
+| id | name   | view    | birthdate  | commands            | age  | months |
++----+--------+---------+------------+---------------------+------+--------+
+|  1 | Oliver | CAT     | 2020-06-30 | Meow, Scratch, Jump |    3 |      7 |
+|  2 | Hammy  | HAMSTER | 2021-03-10 | Roll, Hide          |    2 |     11 |
+|  3 | Peanut | HAMSTER | 2021-08-01 | Roll, Spin          |    2 |      6 |
++----+--------+---------+------------+---------------------+------+--------+
+3 rows in set (0,00 sec)
+
+mysql> 
+
