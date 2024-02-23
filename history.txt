@@ -1,0 +1,328 @@
+tester@debian:~$ ls
+ Android   Arduino    Видео       Загрузки      Музыка         'Рабочий стол'
+ App       projects   Документы   Изображения   Общедоступные   Шаблоны
+tester@debian:~$ cat > pets
+dog
+cat
+hamster
+^C
+tester@debian:~$ cat pets 
+dog
+cat
+hamster
+tester@debian:~$ cat > pack_animals
+hourse
+camel
+donkey
+^C
+tester@debian:~$ cat pack_animals 
+hourse
+camel
+donkey
+tester@debian:~$ cat pets pack_animals > human_frends
+tester@debian:~$ cat human_frends 
+dog
+cat
+hamster
+hourse
+camel
+donkey
+tester@debian:~$ ls
+ Android   human_frends   projects    Загрузки      Общедоступные
+ App       pack_animals   Видео       Изображения  'Рабочий стол'
+ Arduino   pets           Документы   Музыка        Шаблоны
+tester@debian:~$ mv human_frends new_human_frends
+tester@debian:~$ ls
+ Android   new_human_frends   projects    Загрузки      Общедоступные
+ App       pack_animals       Видео       Изображения  'Рабочий стол'
+ Arduino   pets               Документы   Музыка        Шаблоны
+tester@debian:~$ mkdir frends
+tester@debian:~$ mv new_human_frends ./frends/
+tester@debian:~$ ls
+ Android   frends         projects    Загрузки      Общедоступные
+ App       pack_animals   Видео       Изображения  'Рабочий стол'
+ Arduino   pets           Документы   Музыка        Шаблоны
+tester@debian:~$ ls frends/
+new_human_frends
+tester@debian:~$ 
+tester@debian:~$ cd Загрузки/
+tester@debian:~/Загрузки$ sudo apt update
+[sudo] пароль для tester: 
+Сущ:1 http://deb.debian.org/debian bullseye-updates InRelease
+Сущ:2 http://security.debian.org/debian-security bullseye-security InRelease   
+Сущ:3 http://packages.microsoft.com/repos/code stable InRelease                
+Пол:4 https://download.docker.com/linux/debian bullseye InRelease [43,3 kB]    
+Сущ:5 http://deb.debian.org/debian bullseye InRelease                          
+Сущ:6 https://download.sublimetext.com apt/stable/ InRelease                   
+Получено 43,3 kB за 1с (65,8 kB/s)        
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово         
+Все пакеты имеют последние версии.
+tester@debian:~/Загрузки$ sudo dpkg -i mysql-apt-config_0.8.29-1_all.deb 
+Выбор ранее не выбранного пакета mysql-apt-config.
+(Чтение базы данных … на данный момент установлено 266843 файла и каталога.)
+Подготовка к распаковке mysql-apt-config_0.8.29-1_all.deb …
+Распаковывается mysql-apt-config (0.8.29-1) …
+Настраивается пакет mysql-apt-config (0.8.29-1) …
+tester@debian:~/Загрузки$ sudo apt update
+Сущ:1 http://security.debian.org/debian-security bullseye-security InRelease
+Сущ:2 http://deb.debian.org/debian bullseye-updates InRelease                  
+Сущ:3 http://packages.microsoft.com/repos/code stable InRelease                
+Сущ:4 http://deb.debian.org/debian bullseye InRelease                          
+Пол:5 https://download.docker.com/linux/debian bullseye InRelease [43,3 kB]    
+Пол:6 http://repo.mysql.com/apt/debian bullseye InRelease [17,9 kB]            
+Сущ:7 https://download.sublimetext.com apt/stable/ InRelease                   
+Пол:8 http://repo.mysql.com/apt/debian bullseye/mysql-8.0 Sources [949 B]
+Пол:9 http://repo.mysql.com/apt/debian bullseye/mysql-apt-config amd64 Packages [566 B]
+Пол:10 http://repo.mysql.com/apt/debian bullseye/mysql-8.0 amd64 Packages [12,6 kB]
+Пол:11 http://repo.mysql.com/apt/debian bullseye/mysql-tools amd64 Packages [4 114 B]
+Получено 79,4 kB за 1с (73,5 kB/s)         
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово         
+Может быть обновлён 1 пакет. Запустите «apt list --upgradable» для показа.
+tester@debian:~/Загрузки$ sudo apt upgrade -y
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово         
+Расчёт обновлений… Готово
+Следующие пакеты будут обновлены:
+  mysql-common
+Обновлено 1 пакетов, установлено 0 новых пакетов, для удаления отмечено 0 пакетов, и 0 пакетов не обновлено.
+Необходимо скачать 68,5 kB архивов.
+После данной операции объём занятого дискового пространства возрастёт на 55,3 kB.
+Пол:1 http://repo.mysql.com/apt/debian bullseye/mysql-8.0 amd64 mysql-common amd64 8.0.36-1debian11 [68,5 kB]
+Получено 68,5 kB за 0с (343 kB/s)       
+apt-listchanges: Чтение журналов изменений...
+(Чтение базы данных … на данный момент установлено 266848 файлов и каталогов.)
+Подготовка к распаковке …/mysql-common_8.0.36-1debian11_amd64.deb …
+Распаковывается mysql-common (8.0.36-1debian11) на замену (5.8+1.0.7) …
+Настраивается пакет mysql-common (8.0.36-1debian11) …
+Устанавливается новая версия файла настройки /etc/mysql/conf.d/mysql.cnf …
+Устанавливается новая версия файла настройки /etc/mysql/my.cnf.fallback …
+tester@debian:~/Загрузки$ sudo apt install mysql
+mysql-apt-config                       mysql-connector-odbc
+mysql-client                           mysql-connector-odbc-dbgsym
+mysql-common                           mysql-connector-odbc-setup
+mysql-community-client                 mysql-connector-odbc-setup-dbgsym
+mysql-community-client-core            mysql-connector-python-py3
+mysql-community-client-core-dbgsym     mysql-connector-python-py3-dbgsym
+mysql-community-client-dbgsym          mysql-router
+mysql-community-client-plugins         mysql-router-community
+mysql-community-client-plugins-dbgsym  mysql-router-community-dbgsym
+mysql-community-server                 mysql-sandbox
+mysql-community-server-core            mysql-server
+mysql-community-server-core-dbgsym     mysql-shell
+mysql-community-server-debug           mysql-shell-dbgsym
+mysql-community-server-debug-dbgsym    mysqltcl
+mysql-community-test                   mysql-testsuite
+mysql-community-test-dbgsym            mysqltuner
+mysql-community-test-debug             mysqlx-connector-python-py3
+mysql-connector-j                      mysqlx-connector-python-py3-dbgsym
+tester@debian:~/Загрузки$ sudo apt install mysql-server -y
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово         
+Будут установлены следующие дополнительные пакеты:
+  libaio1 libmecab2 mecab-ipadic mecab-ipadic-utf8 mecab-utils mysql-client
+  mysql-community-client mysql-community-client-core
+  mysql-community-client-plugins mysql-community-server
+  mysql-community-server-core psmisc
+Следующие НОВЫЕ пакеты будут установлены:
+  libaio1 libmecab2 mecab-ipadic mecab-ipadic-utf8 mecab-utils mysql-client
+  mysql-community-client mysql-community-client-core
+  mysql-community-client-plugins mysql-community-server
+  mysql-community-server-core mysql-server psmisc
+Обновлено 0 пакетов, установлено 13 новых пакетов, для удаления отмечено 0 пакетов, и 0 пакетов не обновлено.
+Необходимо скачать 42,3 MB архивов.
+После данной операции объём занятого дискового пространства возрастёт на 361 MB.
+Пол:1 http://repo.mysql.com/apt/debian bullseye/mysql-8.0 amd64 mysql-community-client-plugins amd64 8.0.36-1debian11 [1 314 kB]
+Пол:2 http://deb.debian.org/debian bullseye/main amd64 libaio1 amd64 0.3.112-9 [12,5 kB]
+Пол:3 http://deb.debian.org/debian bullseye/main amd64 libmecab2 amd64 0.996-14+b4 [221 kB]
+Пол:4 http://deb.debian.org/debian bullseye/main amd64 psmisc amd64 23.4-2 [198 kB]
+Пол:5 http://deb.debian.org/debian bullseye/main amd64 mecab-utils amd64 0.996-14+b4 [8 944 B]
+Пол:6 http://deb.debian.org/debian bullseye/main amd64 mecab-ipadic all 2.7.0-20070801+main-3 [6 718 kB]
+Пол:7 http://repo.mysql.com/apt/debian bullseye/mysql-8.0 amd64 mysql-community-client-core amd64 8.0.36-1debian11 [1 891 kB]
+Пол:8 http://repo.mysql.com/apt/debian bullseye/mysql-8.0 amd64 mysql-community-client amd64 8.0.36-1debian11 [3 282 kB]
+Пол:9 http://repo.mysql.com/apt/debian bullseye/mysql-8.0 amd64 mysql-client amd64 8.0.36-1debian11 [67,3 kB]
+Пол:10 http://repo.mysql.com/apt/debian bullseye/mysql-8.0 amd64 mysql-community-server-core amd64 8.0.36-1debian11 [28,5 MB]
+Пол:11 http://repo.mysql.com/apt/debian bullseye/mysql-8.0 amd64 mysql-community-server amd64 8.0.36-1debian11 [77,6 kB]
+Пол:12 http://repo.mysql.com/apt/debian bullseye/mysql-8.0 amd64 mysql-server amd64 8.0.36-1debian11 [67,3 kB]
+Пол:13 http://deb.debian.org/debian bullseye/main amd64 mecab-ipadic-utf8 all 2.7.0-20070801+main-3 [5 496 B]
+Получено 42,3 MB за 8с (5 510 kB/s)                                            
+Предварительная настройка пакетов …
+Выбор ранее не выбранного пакета mysql-community-client-plugins.
+(Чтение базы данных … на данный момент установлено 266845 файлов и каталогов.)
+Подготовка к распаковке …/00-mysql-community-client-plugins_8.0.36-1debian11_amd
+64.deb …
+Распаковывается mysql-community-client-plugins (8.0.36-1debian11) …
+Выбор ранее не выбранного пакета mysql-community-client-core.
+Подготовка к распаковке …/01-mysql-community-client-core_8.0.36-1debian11_amd64.
+deb …
+Распаковывается mysql-community-client-core (8.0.36-1debian11) …
+Выбор ранее не выбранного пакета mysql-community-client.
+Подготовка к распаковке …/02-mysql-community-client_8.0.36-1debian11_amd64.deb …
+Распаковывается mysql-community-client (8.0.36-1debian11) …
+Выбор ранее не выбранного пакета mysql-client.
+Подготовка к распаковке …/03-mysql-client_8.0.36-1debian11_amd64.deb …
+Распаковывается mysql-client (8.0.36-1debian11) …
+Выбор ранее не выбранного пакета libaio1:amd64.
+Подготовка к распаковке …/04-libaio1_0.3.112-9_amd64.deb …
+Распаковывается libaio1:amd64 (0.3.112-9) …
+Выбор ранее не выбранного пакета libmecab2:amd64.
+Подготовка к распаковке …/05-libmecab2_0.996-14+b4_amd64.deb …
+Распаковывается libmecab2:amd64 (0.996-14+b4) …
+Выбор ранее не выбранного пакета mysql-community-server-core.
+Подготовка к распаковке …/06-mysql-community-server-core_8.0.36-1debian11_amd64.
+deb …
+Распаковывается mysql-community-server-core (8.0.36-1debian11) …
+Выбор ранее не выбранного пакета psmisc.
+Подготовка к распаковке …/07-psmisc_23.4-2_amd64.deb …
+Распаковывается psmisc (23.4-2) …
+Выбор ранее не выбранного пакета mysql-community-server.
+Подготовка к распаковке …/08-mysql-community-server_8.0.36-1debian11_amd64.deb …
+Распаковывается mysql-community-server (8.0.36-1debian11) …
+Выбор ранее не выбранного пакета mecab-utils.
+Подготовка к распаковке …/09-mecab-utils_0.996-14+b4_amd64.deb …
+Распаковывается mecab-utils (0.996-14+b4) …
+Выбор ранее не выбранного пакета mecab-ipadic.
+Подготовка к распаковке …/10-mecab-ipadic_2.7.0-20070801+main-3_all.deb …
+Распаковывается mecab-ipadic (2.7.0-20070801+main-3) …
+Выбор ранее не выбранного пакета mecab-ipadic-utf8.
+Подготовка к распаковке …/11-mecab-ipadic-utf8_2.7.0-20070801+main-3_all.deb …
+Распаковывается mecab-ipadic-utf8 (2.7.0-20070801+main-3) …
+Выбор ранее не выбранного пакета mysql-server.
+Подготовка к распаковке …/12-mysql-server_8.0.36-1debian11_amd64.deb …
+Распаковывается mysql-server (8.0.36-1debian11) …
+Настраивается пакет libmecab2:amd64 (0.996-14+b4) …
+Настраивается пакет psmisc (23.4-2) …
+Настраивается пакет mecab-utils (0.996-14+b4) …
+Настраивается пакет mysql-community-client-plugins (8.0.36-1debian11) …
+Настраивается пакет libaio1:amd64 (0.3.112-9) …
+Настраивается пакет mecab-ipadic (2.7.0-20070801+main-3) …
+Compiling IPA dictionary for Mecab.  This takes long time...
+reading /usr/share/mecab/dic/ipadic/unk.def ... 40
+emitting double-array: 100% |###########################################| 
+/usr/share/mecab/dic/ipadic/model.def is not found. skipped.
+reading /usr/share/mecab/dic/ipadic/Adverb.csv ... 3032
+reading /usr/share/mecab/dic/ipadic/Noun.demonst.csv ... 120
+reading /usr/share/mecab/dic/ipadic/Adj.csv ... 27210
+reading /usr/share/mecab/dic/ipadic/Noun.others.csv ... 151
+reading /usr/share/mecab/dic/ipadic/Interjection.csv ... 252
+reading /usr/share/mecab/dic/ipadic/Noun.name.csv ... 34202
+reading /usr/share/mecab/dic/ipadic/Others.csv ... 2
+reading /usr/share/mecab/dic/ipadic/Adnominal.csv ... 135
+reading /usr/share/mecab/dic/ipadic/Symbol.csv ... 208
+reading /usr/share/mecab/dic/ipadic/Noun.verbal.csv ... 12146
+reading /usr/share/mecab/dic/ipadic/Noun.adjv.csv ... 3328
+reading /usr/share/mecab/dic/ipadic/Noun.nai.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Noun.number.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Verb.csv ... 130750
+reading /usr/share/mecab/dic/ipadic/Noun.org.csv ... 16668
+reading /usr/share/mecab/dic/ipadic/Filler.csv ... 19
+reading /usr/share/mecab/dic/ipadic/Noun.csv ... 60477
+reading /usr/share/mecab/dic/ipadic/Noun.proper.csv ... 27328
+reading /usr/share/mecab/dic/ipadic/Conjunction.csv ... 171
+reading /usr/share/mecab/dic/ipadic/Noun.place.csv ... 72999
+reading /usr/share/mecab/dic/ipadic/Prefix.csv ... 221
+reading /usr/share/mecab/dic/ipadic/Postp.csv ... 146
+reading /usr/share/mecab/dic/ipadic/Noun.adverbal.csv ... 795
+reading /usr/share/mecab/dic/ipadic/Suffix.csv ... 1393
+reading /usr/share/mecab/dic/ipadic/Auxil.csv ... 199
+reading /usr/share/mecab/dic/ipadic/Postp-col.csv ... 91
+emitting double-array: 100% |###########################################| 
+reading /usr/share/mecab/dic/ipadic/matrix.def ... 1316x1316
+emitting matrix      : 100% |###########################################| 
+
+done!
+update-alternatives: используется /var/lib/mecab/dic/ipadic для предоставления /
+var/lib/mecab/dic/debian (mecab-dictionary) в автоматическом режиме
+Настраивается пакет mysql-community-client-core (8.0.36-1debian11) …
+Настраивается пакет mysql-community-server-core (8.0.36-1debian11) …
+Настраивается пакет mecab-ipadic-utf8 (2.7.0-20070801+main-3) …
+Compiling IPA dictionary for Mecab.  This takes long time...
+reading /usr/share/mecab/dic/ipadic/unk.def ... 40
+emitting double-array: 100% |###########################################| 
+/usr/share/mecab/dic/ipadic/model.def is not found. skipped.
+reading /usr/share/mecab/dic/ipadic/Adverb.csv ... 3032
+reading /usr/share/mecab/dic/ipadic/Noun.demonst.csv ... 120
+reading /usr/share/mecab/dic/ipadic/Adj.csv ... 27210
+reading /usr/share/mecab/dic/ipadic/Noun.others.csv ... 151
+reading /usr/share/mecab/dic/ipadic/Interjection.csv ... 252
+reading /usr/share/mecab/dic/ipadic/Noun.name.csv ... 34202
+reading /usr/share/mecab/dic/ipadic/Others.csv ... 2
+reading /usr/share/mecab/dic/ipadic/Adnominal.csv ... 135
+reading /usr/share/mecab/dic/ipadic/Symbol.csv ... 208
+reading /usr/share/mecab/dic/ipadic/Noun.verbal.csv ... 12146
+reading /usr/share/mecab/dic/ipadic/Noun.adjv.csv ... 3328
+reading /usr/share/mecab/dic/ipadic/Noun.nai.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Noun.number.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Verb.csv ... 130750
+reading /usr/share/mecab/dic/ipadic/Noun.org.csv ... 16668
+reading /usr/share/mecab/dic/ipadic/Filler.csv ... 19
+reading /usr/share/mecab/dic/ipadic/Noun.csv ... 60477
+reading /usr/share/mecab/dic/ipadic/Noun.proper.csv ... 27328
+reading /usr/share/mecab/dic/ipadic/Conjunction.csv ... 171
+reading /usr/share/mecab/dic/ipadic/Noun.place.csv ... 72999
+reading /usr/share/mecab/dic/ipadic/Prefix.csv ... 221
+reading /usr/share/mecab/dic/ipadic/Postp.csv ... 146
+reading /usr/share/mecab/dic/ipadic/Noun.adverbal.csv ... 795
+reading /usr/share/mecab/dic/ipadic/Suffix.csv ... 1393
+reading /usr/share/mecab/dic/ipadic/Auxil.csv ... 199
+reading /usr/share/mecab/dic/ipadic/Postp-col.csv ... 91
+emitting double-array: 100% |###########################################| 
+reading /usr/share/mecab/dic/ipadic/matrix.def ... 1316x1316
+emitting matrix      : 100% |###########################################| 
+
+done!
+update-alternatives: используется /var/lib/mecab/dic/ipadic-utf8 для предоставле
+ния /var/lib/mecab/dic/debian (mecab-dictionary) в автоматическом режиме
+Настраивается пакет mysql-community-client (8.0.36-1debian11) …
+Настраивается пакет mysql-client (8.0.36-1debian11) …
+Настраивается пакет mysql-community-server (8.0.36-1debian11) …
+update-alternatives: используется /etc/mysql/mysql.cnf для предоставления /etc/m
+ysql/my.cnf (my.cnf) в автоматическом режиме
+Created symlink /etc/systemd/system/multi-user.target.wants/mysql.service → /lib
+/systemd/system/mysql.service.
+Настраивается пакет mysql-server (8.0.36-1debian11) …
+Обрабатываются триггеры для man-db (2.9.4-2) …
+Обрабатываются триггеры для libc-bin (2.31-13+deb11u8) …
+tester@debian:~/Загрузки$ 
+tester@debian:~/Загрузки$ sudo service mysql status
+● mysql.service - MySQL Community Server
+     Loaded: loaded (/lib/systemd/system/mysql.service; enabled; vendor preset:>
+     Active: active (running) since Fri 2024-02-23 08:27:16 MSK; 3min 0s ago
+       Docs: man:mysqld(8)
+             http://dev.mysql.com/doc/refman/en/using-systemd.html
+   Main PID: 20333 (mysqld)
+     Status: "Server is operational"
+      Tasks: 37 (limit: 9476)
+     Memory: 370.9M
+        CPU: 2.518s
+     CGroup: /system.slice/mysql.service
+             └─20333 /usr/sbin/mysqld
+
+фев 23 08:27:16 debian systemd[1]: Starting MySQL Community Server...
+фев 23 08:27:16 debian systemd[1]: Started MySQL Community Server.
+tester@debian:~/Загрузки$ 
+tester@debian:~/Загрузки$ sudo dpkg -i klavaro_3.11-1+b1_amd64.deb 
+Выбор ранее не выбранного пакета klavaro.
+(Чтение базы данных … на данный момент установлено 267279 файлов и каталогов.)
+Подготовка к распаковке klavaro_3.11-1+b1_amd64.deb …
+Распаковывается klavaro (3.11-1+b1) …
+Настраивается пакет klavaro (3.11-1+b1) …
+Обрабатываются триггеры для libc-bin (2.31-13+deb11u8) …
+Обрабатываются триггеры для desktop-file-utils (0.26-1) …
+Обрабатываются триггеры для mailcap (3.69) …
+Обрабатываются триггеры для hicolor-icon-theme (0.17-2) …
+Обрабатываются триггеры для man-db (2.9.4-2) …
+tester@debian:~/Загрузки$ sudo dpkg -P klavaro
+(Чтение базы данных … на данный момент установлено 267507 файлов и каталогов.)
+Удаляется klavaro (3.11-1+b1) …
+Обрабатываются триггеры для libc-bin (2.31-13+deb11u8) …
+Обрабатываются триггеры для man-db (2.9.4-2) …
+Обрабатываются триггеры для hicolor-icon-theme (0.17-2) …
+Обрабатываются триггеры для desktop-file-utils (0.26-1) …
+Обрабатываются триггеры для mailcap (3.69) …
+tester@debian:~/Загрузки$ 
